@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Try / Catch - Aprende fácil</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 50px auto; padding: 20px; text-align: center; }
+        button { padding: 12px 25px; font-size: 16px; background: #FF5722; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 5px; }
+        input { padding: 12px; font-size: 18px; width: 200px; text-align: center; border: 2px solid #ddd; border-radius: 5px; margin: 10px; }
+        .exito { background: #d4edda; color: #155724; padding: 15px; border-radius: 10px; margin-top: 20px; }
+        .error { background: #f8d7da; color: #721c24; padding: 15px; border-radius: 10px; margin-top: 20px; }
+        .info { background: #d1ecf1; color: #0c5460; padding: 15px; border-radius: 10px; margin-top: 20px; text-align: left; }
+    </style>
+</head>
+<body>
+    <h1>🛡️ Try / Catch</h1>
+    
+    <input type="text" id="numeroInput" placeholder="Escribe un número">
+    <br>
+    <button onclick="dividir()">➗ Dividir entre 2</button>
+    
+    <div id="resultado"></div>
+    
+    <div class="info">
+        <h3>📖 ¿Cómo funciona?</h3>
+        <p><strong>try {</strong> ← intenta hacer esto<br>
+        &nbsp;&nbsp;&nbsp;// código que puede fallar<br>
+        <strong>} catch(error) {</strong> ← si algo sale mal<br>
+        &nbsp;&nbsp;&nbsp;// muestra el error<br>
+        <strong>}</strong></p>
+        <p>🎯 <strong>Ejemplo:</strong><br>
+        Si escribes "hola" → catch atrapa el error<br>
+        Si escribes 10 → try funciona bien</p>
+    </div>
+
+    <script>
+        function dividir() {
+            let entrada = document.getElementById('numeroInput').value;
+            let resultadoDiv = document.getElementById('resultado');
+            
+            try {
+                // Intentamos hacer esto
+                let numero = Number(entrada);
+                
+                if (entrada === "") {
+                    throw new Error("❌ No escribiste nada");
+                }
+                
+                if (isNaN(numero)) {
+                    throw new Error("❌ Eso no es un número válido");
+                }
+                
+                let resultado = numero / 2;
+                resultadoDiv.innerHTML = `<div class="exito">✅ ${numero} ÷ 2 = ${resultado}</div>`;
+                
+            } catch(error) {
+                // Si algo falla, atrapamos el error
+                resultadoDiv.innerHTML = `<div class="error">⚠️ Error: ${error.message}</div>`;
+            }
+        }
+    </script>
+</body>
+</html>

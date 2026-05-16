@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Console.log - Aprende fácil</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 50px auto; padding: 20px; text-align: center; }
+        button { padding: 12px 25px; font-size: 16px; background: #333; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 10px; }
+        .instruccion { background: #f5f5f5; padding: 20px; border-radius: 10px; margin-top: 20px; text-align: left; border-left: 5px solid #333; }
+        .tecla { background: #333; color: white; padding: 3px 8px; border-radius: 5px; font-family: monospace; }
+        code { background: #e0e0e0; padding: 2px 6px; border-radius: 3px; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <h1>📝 Console.log</h1>
+    
+    <button onclick="mostrarMensaje()">💬 Mostrar mensaje</button>
+    <button onclick="mostrarNumero()">🔢 Mostrar número</button>
+    <button onclick="mostrarObjeto()">📦 Mostrar objeto</button>
+    <button onclick="limpiarConsola()">🧹 Limpiar consola</button>
+    
+    <div class="instruccion">
+        <h3>📖 ¿Cómo ver el resultado?</h3>
+        <p>1. Presiona <span class="tecla">F12</span> o <span class="tecla">Ctrl + Shift + I</span></p>
+        <p>2. Haz clic en la pestaña <strong>"Console"</strong> (Consola)</p>
+        <p>3. Verás los mensajes aparecer allí</p>
+        <hr>
+        <p><strong>🎯 console.log("texto")</strong> → muestra texto</p>
+        <p><strong>🎯 console.log(variable)</strong> → muestra el valor</p>
+        <p><strong>🎯 console.clear()</strong> → borra la consola</p>
+    </div>
+
+    <script>
+        let nombre = "Juan";
+        let edad = 25;
+        
+        function mostrarMensaje() {
+            console.log("¡Hola desde la consola!");
+            console.log("Este es un mensaje de texto");
+            alert("✅ Revisa la consola (F12)");
+        }
+        
+        function mostrarNumero() {
+            let resultado = 10 + 5;
+            console.log("El resultado de 10 + 5 es:", resultado);
+            console.log("La edad es:", edad);
+            console.log("El nombre es:", nombre);
+            alert("✅ Revisa la consola (F12)");
+        }
+        
+        function mostrarObjeto() {
+            let persona = { nombre: "Ana", edad: 30, ciudad: "Madrid" };
+            console.log("Datos de la persona:", persona);
+            console.log("Nombre:", persona.nombre);
+            console.log("Edad:", persona.edad);
+            alert("✅ Revisa la consola (F12)");
+        }
+        
+        function limpiarConsola() {
+            console.clear();
+            console.log("🧹 Consola limpiada");
+            alert("✅ Consola limpiada");
+        }
+        
+        // Mensaje de bienvenida al cargar
+        console.log("🎉 ¡Bienvenido! La página está lista");
+        console.log("Prueba los botones 👆");
+    </script>
+</body>
+</html>
